@@ -1,0 +1,33 @@
+Win32-xul2ppt_mec version 0.01
+==============================
+
+This is to convert .xul files to .ppt files with virtual or mechanical method.
+By controlling keys and mouse automacally, you can convert your .xul 
+to ppt in your free time.
+
+DEPENDENCIES
+
+This module requires these other modules and libraries:
+
+Win32::Guitest
+Clipboard
+Carp
+
+And if you need to trim the pictures to get a mini-ppt files 
+Image-Magic installer also prerequired.
+
+To install this module type the following:
+
+   perl Makefile.PL
+   make
+   make test
+   make install
+
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2006 Sal Zhong
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+

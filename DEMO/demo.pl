@@ -1,11 +1,11 @@
-#01test.t test for Xul2ppt_mec.pm
-#2006-07-04 2006-07-04
+#demo.pl
+#2006-09-30 2006-09-30
 
 use strict;
 use warnings;
 use Test::More tests => 7;
 
-use Win32::Xul2ppt_mec;
+use Win32::xul2ppt_mec;
 
 my $obj = Win32::Xul2ppt_mec->new(	 
 				  'range'	=> [5, 10],
@@ -15,14 +15,14 @@ my $obj = Win32::Xul2ppt_mec->new(
 			 );
 
 L:
-warn "\nplease open \"D:/zwx/Win32/t/pattern/pattern.xul\" with mozilla firefox,
-	and start powerpoint.No minimizing any, if ready, please input 'ok'...\n";
+print "\nplease open \"D:/zwx/Win32/t/pattern/pattern.xul\" with mozilla firefox,
+	and start powerpoint.No minimizing any, if ready, please input 'ok'...\n: ";
 my $sure = <STDIN>;
 chomp $sure;
 
 goto L unless $sure =~ m/ok/i;
 $obj->shoot();
-#$obj->trim();
+#$obj->trim();  #if image-magic has been installed, comment can be removed to get mini pictures
 $obj->to_ppt();
 
 for($obj->{range}[0]..$obj->{range}[1]) {

@@ -1,6 +1,6 @@
-#Xul2ppt_mec.pm converts Xul to ppt on Win32 platform mechanically
+#xul2ppt_mec.pm converts .xul to .ppt on Win32 platform mechanically
 #Copy Right (C) Sal Zhong 
-#2006-07-04 2006-07-04
+#2006-09-30 2006-09-30
 
 package Win32::Xul2ppt_mec;
 
@@ -75,7 +75,7 @@ sub shoot {
 		sleep $self->{'interval'};
 
 	} else {
-		croak "\n",'-'x80,"\nPlease open Xul file with mozila firefox! and starting powerpoint......\n", '-'x80, "\n";
+		croak "\n",'-'x80,"\nPlease open .xul file with mozila firefox! and starting powerpoint......\n", '-'x80, "\n";
 	}
 	my $i = 1;
 	while(1) {		
@@ -104,7 +104,7 @@ sub trim {
 	print "start trimming pictures!\n";
 	my @pngs = glob("$self->{'dir'}/png/tmp*.png");
 	for(@pngs) {
-			last if system "convert -crop +0+25 $_ $_";
+			last if system "convert -crop +0+30 $_ $_";
 			last if system "convert -trim $_ $_";
 	}
 }
@@ -147,7 +147,7 @@ __END__
 
 =head1 NAME
 
-Xul2ppt_mec.pm - convert Xul to ppt on Win32 Platform mechanically
+Xul2ppt_mec.pm - convert .xul to .ppt on Win32 Platform mechanically
 
 =head1 SYNOPSIS
 
@@ -170,9 +170,9 @@ Note: (If you want to convert directly, please consult the bundled L<Xul2ppt>  u
 
 =head1 DESCRIPTION
 
-This module provides an interface to convert .Xul files to .ppt files with virtual or mechanical method.
-By the interfaces of controlling keys and mouse automacally provided by Win32::Guitest, you can convert your Xul 
-to ppt in free time. To do so, Win32::Guitest module installer is prerequired. And if you need to trim the pictures
+This module provides an interface to convert .xul files to .ppt files with virtual or mechanical method.
+By the interfaces of controlling keys and mouse automacally provided by Win32::Guitest, you can convert your .xul 
+to .ppt in free time. To do so, Win32::Guitest module installer is prerequired. And if you need to trim the pictures
 to get a mini-ppt files Image-Magic installer also prerequired.
 
 =head1 METHOD
@@ -193,13 +193,13 @@ section.
 
 =item * $obj->shoot()
 
-Before invoking this method, please make sure that your xul file has already been opened by mozilla firefox and 
+Before invoking this method, please make sure that your .xul file has already been opened by mozilla firefox and 
 the window not minimized.
 
 =item * $obj->trim()
 
-After the shoot terminates, pictures of your Xul files displayed on mozilla firefox are catched and saved under a 
-certain directory. However,  some blemish remains in the intial pictures, further trimming the pictures are strongly
+After  shooting terminates, pictures of your .xul files displayed on mozilla firefox are catched and saved under a 
+certain directory. However,  some blemish remains in the raw pictures, further trimming the pictures are strongly
 recommended. Two command lines provided by Imagic-Magic are invoking: 
 
 "convert -crop +0+25 $file $file" 
@@ -208,7 +208,7 @@ recommended. Two command lines provided by Imagic-Magic are invoking:
 
 =item * $obj->to_ppt();
 
-Automacally inserts pictures into your ppt files. Before running, powerpoint should be started and not minimized!
+Automacally inserts pictures into your .ppt files. Before running, powerpoint should be started and not minimized!
 
 =back
 
@@ -217,7 +217,7 @@ Automacally inserts pictures into your ppt files. Before running, powerpoint sho
 =over
 
 =item * $obj->{'range'}
-Set the start and end index of Xul shooted
+Set the start and end index of .xul shooted
 
 =item * $obj->{'interval'}
 
@@ -230,11 +230,11 @@ set the directory, under which all the intermediate files will be saved. and 'D:
 
 =item * $obj->{'name'}
 
-set the name of your ppt file, 'sample.ppt' is default
+set the name of your .ppt file, 'sample.ppt' is default
 
 =back
 
-=head1 xul2ppt command tools to convert xul to ppt
+=head1 xul2ppt command tools to convert .xul to .ppt
 
 =head2 SYNOPSIS
 
@@ -254,18 +254,12 @@ xul2ppt [ -r "[num1, num2]" | -i num | -d string | -n string ]  xul2ppt.pl
 
 =back
 
-set the postfix of the intermediate images. 'png' is default.
+set the format of the intermediate images. '.png' is default.
 
 =head1 AUTHOR
 
 Sal Zhong (Zhong Wei Xiang)
 
-=begin html
-
-<a href = "mailto: zhongxiang721@gmail.com"> Contact me </a>
-
-=end html
-
-=head1 COPYRIGHT
+zhongxiang721@gamil.com
 
 Copyright (c) 2006 Sal Zhong. All rights reserved.
