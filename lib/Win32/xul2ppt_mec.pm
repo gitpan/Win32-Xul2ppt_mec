@@ -9,7 +9,7 @@ use warnings;
 use Win32::GuiTest qw(:ALL);
 use Clipboard;
 use Carp qw/croak carp/;
-our $VERSION = '0.01';
+our $VERSION = '0.2';
 
 sub new {
 	my $proto = shift;
@@ -260,6 +260,6 @@ set the format of the intermediate images. '.png' is default.
 
 Sal Zhong (Zhong Wei Xiang)
 
-zhongxiang721@gamil.com
+zhongxiang721@gmail.com
 
 Copyright (c) 2006 Sal Zhong. All rights reserved.

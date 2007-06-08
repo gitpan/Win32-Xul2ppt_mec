@@ -1,0 +1,16 @@
+abstract: ~
+author: Sal Zhong (Zhong Wei Xiang)
+build_requires: 
+  Test::More: 0
+distribution_type: module
+generated_by: Module::Install version 0.64
+license: perl
+name: xul2ppt_mec
+no_index: 
+  directory: 
+    - inc
+    - t
+requires: 
+  Clipboard: 0
+  Win32::GuiTest: 0
+version: 0.01
